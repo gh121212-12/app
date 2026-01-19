@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>书影音记录</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部栏 -->
+        <header class="top-bar">
+            <h1 class="app-title">书影音记录</h1>
+            <button class="add-btn" id="addBtn">+</button>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 主页 -->
+            <div class="page-content" id="homePage">
+                <!-- 近期观看 -->
+                <section class="recent-section">
+                    <h2 class="section-title">近期观看</h2>
+                    <div class="poster-grid">
+                        <div class="poster-item">
+                            <div class="poster-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                            <p class="poster-title">《百年孤独》</p>
+                        </div>
+                        <div class="poster-item">
+                            <div class="poster-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                            <p class="poster-title">《星际穿越》</p>
+                        </div>
+                        <div class="poster-item">
+                            <div class="poster-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                            <p class="poster-title">《海上钢琴师》</p>
+                        </div>
+                        <div class="poster-item">
+                            <div class="poster-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                            <p class="poster-title">《挪威的森林》</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 本周记录频率 -->
+                <section class="frequency-section">
+                    <h2 class="section-title">本周记录频率</h2>
+                    <div class="chart-container">
+                        <div class="bar-chart">
+                            <div class="bar-item">
+                                <div class="bar" style="height: 60%;"></div>
+                                <span class="bar-label">周一</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar" style="height: 80%;"></div>
+                                <span class="bar-label">周二</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar" style="height: 45%;"></div>
+                                <span class="bar-label">周三</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar" style="height: 90%;"></div>
+                                <span class="bar-label">周四</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar" style="height: 70%;"></div>
+                                <span class="bar-label">周五</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar" style="height: 55%;"></div>
+                                <span class="bar-label">周六</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar" style="height: 75%;"></div>
+                                <span class="bar-label">周日</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 笔记 -->
+                <section class="notes-section">
+                    <h2 class="section-title">笔记</h2>
+                    <div class="notes-list">
+                        <div class="note-item">
+                            <div class="note-date">2024年1月15日</div>
+                            <div class="note-content">今天读完了《百年孤独》，魔幻现实主义的手法令人震撼...</div>
+                        </div>
+                        <div class="note-item">
+                            <div class="note-date">2024年1月12日</div>
+                            <div class="note-content">《星际穿越》的配乐和视觉效果都太棒了，诺兰的又一力作。</div>
+                        </div>
+                        <div class="note-item">
+                            <div class="note-date">2024年1月10日</div>
+                            <div class="note-content">重看《海上钢琴师》，依然被1900的故事深深打动。</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 馆藏页 -->
+            <div class="page-content hidden" id="libraryPage">
+                <!-- 书籍分类 -->
+                <section class="bookshelf-section">
+                    <h2 class="category-title">📚 书籍</h2>
+                    <div class="bookshelf">
+                        <div class="shelf-row">
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                                <p class="book-title">《百年孤独》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                                <p class="book-title">《挪威的森林》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                                <p class="book-title">《1984》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
+                                <p class="book-title">《三体》</p>
+                            </div>
+                        </div>
+                        <div class="shelf-row">
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                                <p class="book-title">《活着》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);"></div>
+                                <p class="book-title">《追风筝的人》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></div>
+                                <p class="book-title">《小王子》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #ff8a80 0%, #ea4c89 100%);"></div>
+                                <p class="book-title">《解忧杂货店》</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 影视分类 -->
+                <section class="bookshelf-section">
+                    <h2 class="category-title">🎬 影视</h2>
+                    <div class="bookshelf">
+                        <div class="shelf-row">
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                                <p class="book-title">《星际穿越》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                                <p class="book-title">《海上钢琴师》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);"></div>
+                                <p class="book-title">《肖申克的救赎》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);"></div>
+                                <p class="book-title">《阿甘正传》</p>
+                            </div>
+                        </div>
+                        <div class="shelf-row">
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                                <p class="book-title">《盗梦空间》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                                <p class="book-title">《楚门的世界》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                                <p class="book-title">《当幸福来敲门》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                                <p class="book-title">《千与千寻》</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 音乐分类 -->
+                <section class="bookshelf-section">
+                    <h2 class="category-title">🎵 音乐</h2>
+                    <div class="bookshelf">
+                        <div class="shelf-row">
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                                <p class="book-title">《The Beatles》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
+                                <p class="book-title">《Pink Floyd》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                                <p class="book-title">《Queen》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);"></div>
+                                <p class="book-title">《Radiohead》</p>
+                            </div>
+                        </div>
+                        <div class="shelf-row">
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></div>
+                                <p class="book-title">《Coldplay》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #ff8a80 0%, #ea4c89 100%);"></div>
+                                <p class="book-title">《Taylor Swift》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);"></div>
+                                <p class="book-title">《Ed Sheeran》</p>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-poster" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);"></div>
+                                <p class="book-title">《Billie Eilish》</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 日历页 -->
+            <div class="page-content hidden" id="calendarPage">
+                <section class="calendar-section">
+                    <div class="calendar-header">
+                        <button class="month-nav-btn" id="prevMonth">‹</button>
+                        <h2 class="month-title" id="monthTitle">2024年1月</h2>
+                        <button class="month-nav-btn" id="nextMonth">›</button>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- 日历网格将通过JS动态生成 -->
+                    </div>
+                </section>
+                <section class="timeline-section">
+                    <h2 class="section-title">时间轴详情</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">1月15日</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">《百年孤独》</div>
+                                <div class="timeline-desc">今天读完了这本书，魔幻现实主义的手法令人震撼...</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">1月12日</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">《星际穿越》</div>
+                                <div class="timeline-desc">《星际穿越》的配乐和视觉效果都太棒了，诺兰的又一力作。</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">1月10日</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">《海上钢琴师》</div>
+                                <div class="timeline-desc">重看《海上钢琴师》，依然被1900的故事深深打动。</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">1月8日</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">《挪威的森林》</div>
+                                <div class="timeline-desc">村上春树的文字总是能触动内心最柔软的地方。</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">1月5日</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">《1984》</div>
+                                <div class="timeline-desc">反乌托邦的经典之作，引人深思。</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 我的页面 -->
+            <div class="page-content hidden" id="profilePage">
+                <section class="profile-section">
+                    <div class="profile-header">
+                        <div class="avatar-container">
+                            <div class="avatar">用</div>
+                        </div>
+                        <div class="profile-info">
+                            <h2 class="profile-name">用户名</h2>
+                            <p class="profile-id">ID: 123456</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="member-section">
+                    <div class="member-card">
+                        <div class="member-info">
+                            <div class="member-icon">👑</div>
+                            <div class="member-text">
+                                <div class="member-title">会员服务</div>
+                                <div class="member-desc">开通会员享受更多特权</div>
+                            </div>
+                        </div>
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </section>
+                <section class="settings-section">
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <div class="setting-icon">⚙️</div>
+                            <span class="setting-text">设置</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-icon">📊</div>
+                            <span class="setting-text">数据统计</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-icon">💬</div>
+                            <span class="setting-text">意见反馈</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-icon">ℹ️</div>
+                            <span class="setting-text">关于我们</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 详情页 -->
+            <div class="page-content hidden" id="detailPage">
+                <!-- 顶部栏 -->
+                <div class="detail-header">
+                    <button class="back-btn" id="backBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <h1 class="detail-title" id="detailTitle">《地球脉动》</h1>
+                    <button class="edit-btn" id="editBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- 海报和打卡日历 -->
+                <section class="detail-poster-section">
+                    <div class="detail-poster-container">
+                        <div class="detail-poster" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        <div class="checkin-calendar">
+                            <h3 class="checkin-title">观看打卡</h3>
+                            <div class="checkin-grid">
+                                <div class="checkin-day checked">1</div>
+                                <div class="checkin-day checked">2</div>
+                                <div class="checkin-day checked">3</div>
+                                <div class="checkin-day">4</div>
+                                <div class="checkin-day checked">5</div>
+                                <div class="checkin-day">6</div>
+                                <div class="checkin-day checked">7</div>
+                                <div class="checkin-day checked">8</div>
+                                <div class="checkin-day">9</div>
+                                <div class="checkin-day checked">10</div>
+                                <div class="checkin-day checked">11</div>
+                                <div class="checkin-day">12</div>
+                                <div class="checkin-day checked">13</div>
+                                <div class="checkin-day checked">14</div>
+                                <div class="checkin-day">15</div>
+                                <div class="checkin-day checked">16</div>
+                                <div class="checkin-day">17</div>
+                                <div class="checkin-day checked">18</div>
+                                <div class="checkin-day checked">19</div>
+                                <div class="checkin-day">20</div>
+                                <div class="checkin-day checked">21</div>
+                                <div class="checkin-day checked">22</div>
+                                <div class="checkin-day">23</div>
+                                <div class="checkin-day checked">24</div>
+                                <div class="checkin-day checked">25</div>
+                                <div class="checkin-day">26</div>
+                                <div class="checkin-day checked">27</div>
+                                <div class="checkin-day checked">28</div>
+                                <div class="checkin-day">29</div>
+                                <div class="checkin-day checked">30</div>
+                                <div class="checkin-day">31</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 打分和剧评 -->
+                <section class="detail-rating-section">
+                    <div class="status-rating-container">
+                        <!-- 观看状态 -->
+                        <div class="status-section">
+                            <span class="status-label">观看状态</span>
+                            <div class="status-selector">
+                                <button class="status-btn active" data-status="watching">在看</button>
+                                <button class="status-btn" data-status="want">想看</button>
+                                <button class="status-btn" data-status="abandon">放弃</button>
+                                <button class="status-btn" data-status="rewatch">重新看</button>
+                                <button class="status-btn" data-status="multi-abandon">多次放弃</button>
+                            </div>
+                        </div>
+                        <!-- 评分 -->
+                        <div class="rating-header">
+                            <div class="rating-display">
+                                <span class="rating-label">我的评分</span>
+                                <div class="rating-stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                                <span class="rating-score">5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews-section">
+                        <h3 class="reviews-title">我的看法</h3>
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <span class="review-episode">第10集</span>
+                                    <span class="review-date">2024年1月20日</span>
+                                </div>
+                                <div class="review-content">最后一集太震撼了！自然界的壮美与脆弱都展现得淋漓尽致。这部纪录片让我重新认识了地球。</div>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <span class="review-episode">第9集</span>
+                                    <span class="review-date">2024年1月18日</span>
+                                </div>
+                                <div class="review-content">海洋篇的画面太美了，每一帧都可以做壁纸。配乐也很棒，完美契合画面。</div>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <span class="review-episode">第8集</span>
+                                    <span class="review-date">2024年1月16日</span>
+                                </div>
+                                <div class="review-content">森林生态系统的复杂性和多样性让人惊叹。摄影技术真的是一流的。</div>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <span class="review-episode">第7集</span>
+                                    <span class="review-date">2024年1月14日</span>
+                                </div>
+                                <div class="review-content">沙漠篇展现了生命的顽强。在如此恶劣的环境中，依然有生物能够生存繁衍。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 状态时间轴 -->
+                    <div class="status-timeline-section">
+                        <h3 class="status-timeline-title">状态时间轴</h3>
+                        <div class="status-timeline">
+                            <div class="status-timeline-item">
+                                <div class="status-timeline-date">2024年1月20日</div>
+                                <div class="status-timeline-content">
+                                    <div class="status-timeline-status status-watching">在看</div>
+                                    <div class="status-timeline-desc">开始观看第10集</div>
+                                </div>
+                            </div>
+                            <div class="status-timeline-item">
+                                <div class="status-timeline-date">2024年1月15日</div>
+                                <div class="status-timeline-content">
+                                    <div class="status-timeline-status status-rewatch">重新看</div>
+                                    <div class="status-timeline-desc">重新开始观看</div>
+                                </div>
+                            </div>
+                            <div class="status-timeline-item">
+                                <div class="status-timeline-date">2024年1月10日</div>
+                                <div class="status-timeline-content">
+                                    <div class="status-timeline-status status-abandon">放弃</div>
+                                    <div class="status-timeline-desc">暂时放弃观看</div>
+                                </div>
+                            </div>
+                            <div class="status-timeline-item">
+                                <div class="status-timeline-date">2024年1月5日</div>
+                                <div class="status-timeline-content">
+                                    <div class="status-timeline-status status-want">想看</div>
+                                    <div class="status-timeline-desc">添加到想看列表</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 关联记录 -->
+                <section class="related-section">
+                    <h3 class="related-title">相关记录</h3>
+                    <div class="related-books">
+                        <h4 class="related-category">📚 相关书籍</h4>
+                        <div class="related-list">
+                            <div class="related-item">
+                                <div class="related-poster" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                                <p class="related-name">《地球的奥秘》</p>
+                            </div>
+                            <div class="related-item">
+                                <div class="related-poster" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                                <p class="related-name">《自然史》</p>
+                            </div>
+                            <div class="related-item">
+                                <div class="related-poster" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                                <p class="related-name">《生物多样性》</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="related-music">
+                        <h4 class="related-category">🎵 相关音乐</h4>
+                        <div class="related-list">
+                            <div class="related-item">
+                                <div class="related-poster" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                                <p class="related-name">《Earth》原声带</p>
+                            </div>
+                            <div class="related-item">
+                                <div class="related-poster" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                                <p class="related-name">《Nature Sounds》</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- 底部导航栏 -->
+        <nav class="bottom-nav">
+            <div class="nav-item active">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>主页</span>
+            </div>
+            <div class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span>馆藏</span>
+            </div>
+            <div class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>日历</span>
+            </div>
+            <div class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>我的</span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- 添加记录弹窗 -->
+    <div class="modal" id="addModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>新增阅读记录</h3>
+                <button class="close-btn" id="closeBtn">×</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="标题" class="modal-input">
+                <input type="text" placeholder="类型（书/影/音）" class="modal-input">
+                <textarea placeholder="笔记内容..." class="modal-textarea"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn cancel-btn" id="cancelBtn">取消</button>
+                <button class="modal-btn confirm-btn">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
